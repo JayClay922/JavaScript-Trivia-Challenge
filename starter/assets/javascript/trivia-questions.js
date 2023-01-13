@@ -40,16 +40,27 @@ let myTriviaQuestions = [{
 }
 ];
 
+let index = 0
+
 let startButton = document.getElementById("start");
 let timer = document.getElementById("time")
 let questions = document.getElementById("questions")
+let questionTitle = document.getElementById("question-title")
+let choices = document.getElementById("choices")
 questions.style.display = "block"
+
+function showQuestions() {
+    questions.innerHTML = myTriviaQuestions[index].question
+    for(let i = 0; i < myTriviaQuestions[index].answers.length; i++) {
+        choices.textContent = myTriviaQuestions[index].answers[i]
+    }
+}
 
 startButton.addEventListener("click", function () {
     let time = 200;
     timer.innerHTML = time;
-    questions.innerHTML = myTriviaQuestions.question && myTriviaQuestions.answers
-    console.log(questions.innerHTML)
+    
+    showQuestions()
 
     let interval = setInterval(function () {
         time--;
