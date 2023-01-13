@@ -38,4 +38,23 @@ let myTriviaQuestions = [{
     question: "How do you round the number 7.25, to the nearest integer?",
     answers: ["round(7.25)", "Math.round(7.25)", "Math.rnd(7.25)", "rnd(7.25)"]
 }
-]
+];
+
+let startButton = document.getElementById("start");
+let timer = document.getElementById("time")
+let questions = document.getElementById("questions")
+
+startButton.addEventListener("click", function () {
+    let time = 200;
+    timer.innerHTML = time;
+    questions.innerHTML = myTriviaQuestions
+
+    let interval = setInterval(function () {
+        time--;
+        timer.innerHTML = time;
+        if(time === 0) {
+            clearInterval(interval);
+        }
+    }, 1000)
+}
+)
