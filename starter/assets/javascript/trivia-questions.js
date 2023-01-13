@@ -43,11 +43,13 @@ let myTriviaQuestions = [{
 let startButton = document.getElementById("start");
 let timer = document.getElementById("time")
 let questions = document.getElementById("questions")
+questions.style.display = "block"
 
 startButton.addEventListener("click", function () {
     let time = 200;
     timer.innerHTML = time;
-    questions.innerHTML = myTriviaQuestions
+    questions.innerHTML = myTriviaQuestions.question && myTriviaQuestions.answers
+    console.log(questions.innerHTML)
 
     let interval = setInterval(function () {
         time--;
