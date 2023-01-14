@@ -57,16 +57,17 @@ function showQuestions() {
         let btn = document.createElement("button")
         btn.textContent = myTriviaQuestions[index].answers[i]
         choices.appendChild(btn)
+
+        btn.addEventListener("click", function () {
+            if(btn.textContent !== correctAnswers) {
+                time - 20;
+                timer.innerHTML = time;
+                index += 1
+                showQuestions()
+            }
+        })
     }index += 1;
-    
-    btn.addEventListener("click", function () {
-        if(btn.textContent !== correctAnswers) {
-            time - 20;
-            timer.innerHTML = time;
-            index += 1
-            showQuestions()
-        }
-    })
+
 }
 
 startButton.addEventListener("click", function () {
