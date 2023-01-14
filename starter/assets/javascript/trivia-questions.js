@@ -40,7 +40,7 @@ let myTriviaQuestions = [{
 }
 ];
 
-correctAnswers = ["<script>", "alert('Hello World')", "if(i == 5", "for(i = 0; i <= 5; i++)", "//This is a comment", "let colors = ['red', 'green', 'blue'", "let colors = red, green, blue", "=", "True", "onclick", "Math.round(7.25)"]
+correctAnswers = ["<script>", "alert('Hello World')", "if(i == 5)", "for(i = 0; i <= 5; i++)", "//This is a comment", "let colors = ['red', 'green', 'blue']", "=", "True", "onclick", "Math.round(7.25)"]
 
 let index = 0
 
@@ -59,16 +59,14 @@ function showQuestions() {
         choices.appendChild(btn)
 
         btn.addEventListener("click", function () {
-            if(btn.textContent !== correctAnswers) {
-                time - 20;
-                timer.innerHTML = time;
-                index += 1
-                showQuestions()
+            if(btn.textContent === correctAnswers[i]) {
+               let nextQuestion = questions.innerHTML++
             }
         })
-    }index += 1;
+    };
 
 }
+let time = 200
 
 startButton.addEventListener("click", function () {
     let time = 200;
