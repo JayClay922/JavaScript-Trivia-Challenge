@@ -94,6 +94,12 @@ function endQuiz() {
     questions.setAttribute("class", "hide")
 }
 
+function timerEnd() {
+    if(time === 0) {
+        endQuiz()
+    }
+}
+
 let time = 100
 let interval;
 startButton.addEventListener("click", function () {
