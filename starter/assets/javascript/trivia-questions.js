@@ -51,10 +51,22 @@ let questionTitle = document.getElementById("question-title")
 let choices = document.getElementById("choices")
 console.log("choices = ", choices)
 
+function showQuestions() {
+    console.log("index = ", index)
+    questions.innerHTML = myTriviaQuestions[index].question;
+    choices.innerHTML = "";
+    for(let i = 0; i < myTriviaQuestions[index].answers.length; i++) {
+        let btn = document.createElement("button")
+        btn.textContent = myTriviaQuestions[index].answers[i]
+        btn.onclick = answerClickHandler;
+        choices.appendChild(btn)
+    };
+
+}
 
 function answerClickHandler() {
     if(this.textContent !== correctAnswers[index]) {
-        time -= 15
+        time -= 10
     
     if(time < 0) {
         time = 0
@@ -73,7 +85,6 @@ if(index === myTriviaQuestions.length) {
 }
 
 function endQuiz() {
-    //to be completed
     choices.innerHTML = "";
     clearInterval(interval);
     let endDiv = document.getElementById("end-screen");
@@ -82,30 +93,10 @@ function endQuiz() {
     finalScore.textContent = time;
     questions.setAttribute("class", "hide")
 }
-function showQuestions() {
-    console.log("index = ", index)
-    questions.innerHTML = myTriviaQuestions[index].question;
-    choices.innerHTML = "";
-    for(let i = 0; i < myTriviaQuestions[index].answers.length; i++) {
-        let btn = document.createElement("button")
-        btn.textContent = myTriviaQuestions[index].answers[i]
-        btn.onclick = answerClickHandler;
-        choices.appendChild(btn)
 
-
-
-        // btn.addEventListener("click", function () {
-        //     if(btn.textContent === correctAnswers[i]) {
-        //        let nextQuestion = questions.innerHTML[i]++
-        //     }
-        // })
-    };
-
-}
-let time = 200
+let time = 100
 let interval;
 startButton.addEventListener("click", function () {
-    // time = 200;
     let startDiv = document.getElementById("start-screen");
     startDiv.setAttribute("class", "hide");
     questions.removeAttribute("class")
