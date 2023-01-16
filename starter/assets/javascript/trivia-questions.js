@@ -40,7 +40,7 @@ let myTriviaQuestions = [{
 }
 ];
 
-correctAnswers = ["<script>", "alert('Hello World')", "if(i == 5)", "for(i = 0; i <= 5; i++)", "//This is a comment", "let colors = ['red', 'green', 'blue']", "=", "True", "onclick", "Math.round(7.25)"]
+correctAnswers = ["<script>", "alert('Hello World');", "if(i == 5)", "for(i = 0; i <= 5; i++)", "//This is a comment", "let colors = ['red', 'green', 'blue']", "=", "True", "onclick", "Math.round(7.25)"]
 
 let index = 0
 
@@ -51,30 +51,63 @@ let questionTitle = document.getElementById("question-title")
 let choices = document.getElementById("choices")
 questions.style.display = "block"
 
+function answerClickHandler() {
+    if(this.textContent !== correctAnswers[index]) {
+        time -= 15
+    
+    if(time < 0) {
+        time = 0
+    }
+    timer.innerHTML = time
+    alert("wrong answer press OK to continue");
+} else {
+    alert("right asnwer press OK  to continue")
+}
+index++;
+if(index === questions.length) {
+    endQuiz();
+} else {
+    showQuestions();
+}
+}
+
+function endQuiz() {
+    //to be completed
+    clearInterval(interval);
+    let endDiv = document.getElementById("end-screen");
+    endDiv.removeAttribute("class");
+    let finalScore = document.getElementById("final-score");
+    finalScore.textContent = time;
+    questions.setAttribute("class", "hide")
+}
 function showQuestions() {
-    questions.innerHTML = myTriviaQuestions[index].question
+    questions.innerHTML = myTriviaQuestions[index].question;
+    choices.innerHTML = "";
     for(let i = 0; i < myTriviaQuestions[index].answers.length; i++) {
         let btn = document.createElement("button")
         btn.textContent = myTriviaQuestions[index].answers[i]
+        btn.onclick = answerClickHandler;
         choices.appendChild(btn)
 
-        btn.addEventListener("click", function () {
-            if(btn.textContent === correctAnswers[i]) {
-               let nextQuestion = questions.innerHTML++
-            }
-        })
+
+
+        // btn.addEventListener("click", function () {
+        //     if(btn.textContent === correctAnswers[i]) {
+        //        let nextQuestion = questions.innerHTML[i]++
+        //     }
+        // })
     };
 
 }
 let time = 200
-
+let interval;
 startButton.addEventListener("click", function () {
-    let time = 200;
+    // time = 200;
     timer.innerHTML = time;
     
     showQuestions()
 
-    let interval = setInterval(function () {
+    interval = setInterval(function () {
         time--;
         timer.innerHTML = time;
         if(time === 0) {
