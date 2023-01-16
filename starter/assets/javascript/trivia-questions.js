@@ -49,10 +49,10 @@ let timer = document.getElementById("time")
 let questions = document.getElementById("questions")
 let questionTitle = document.getElementById("question-title")
 let choices = document.getElementById("choices")
-console.log("choices = ", choices)
+let initials = document.getElementById("initials")
+
 
 function showQuestions() {
-    console.log("index = ", index)
     questions.innerHTML = myTriviaQuestions[index].question;
     choices.innerHTML = "";
     for(let i = 0; i < myTriviaQuestions[index].answers.length; i++) {
@@ -94,9 +94,18 @@ function endQuiz() {
     questions.setAttribute("class", "hide")
 }
 
+function submitInitials () {
+    let submitBtn = document.getElementById("submit")
+
+    submitBtn.addEventListener("click", function () {
+        
+    })
+}
+
 
 let time = 100
 let interval;
+
 startButton.addEventListener("click", function () {
     let startDiv = document.getElementById("start-screen");
     startDiv.setAttribute("class", "hide");
