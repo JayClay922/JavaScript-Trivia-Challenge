@@ -49,6 +49,7 @@ let timer = document.getElementById("time")
 let questions = document.getElementById("questions")
 let questionTitle = document.getElementById("question-title")
 let choices = document.getElementById("choices")
+console.log("choices = ", choices)
 
 
 function answerClickHandler() {
@@ -73,6 +74,7 @@ if(index === myTriviaQuestions.length) {
 
 function endQuiz() {
     //to be completed
+    choices.innerHTML = "";
     clearInterval(interval);
     let endDiv = document.getElementById("end-screen");
     endDiv.removeAttribute("class");
