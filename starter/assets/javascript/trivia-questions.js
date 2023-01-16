@@ -49,7 +49,7 @@ let timer = document.getElementById("time")
 let questions = document.getElementById("questions")
 let questionTitle = document.getElementById("question-title")
 let choices = document.getElementById("choices")
-questions.style.display = "block"
+
 
 function answerClickHandler() {
     if(this.textContent !== correctAnswers[index]) {
@@ -106,6 +106,7 @@ startButton.addEventListener("click", function () {
     // time = 200;
     let startDiv = document.getElementById("start-screen");
     startDiv.setAttribute("class", "hide");
+    questions.removeAttribute("class")
     timer.innerHTML = time;
     
     showQuestions()
