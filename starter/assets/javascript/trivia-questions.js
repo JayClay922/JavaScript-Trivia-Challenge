@@ -49,7 +49,8 @@ let timer = document.getElementById("time")
 let questions = document.getElementById("questions")
 let questionTitle = document.getElementById("question-title")
 let choices = document.getElementById("choices")
-let initials = document.getElementById("initials")
+let initialsEl = document.getElementById("initials")
+let submit = document.getElementById("submit")
 
 
 function showQuestions() {
@@ -94,13 +95,12 @@ function endQuiz() {
     questions.setAttribute("class", "hide")
 }
 
-function submitInitials () {
-    let submitBtn = document.getElementById("submit")
+let initials = initials.value
 
-    submitBtn.addEventListener("click", function () {
-        
-    })
-}
+submit.addEventListener("click", function (event) {
+    initialsEl = initials
+    localStorage.setItem("initials", initialsEl)
+})
 
 
 let time = 100
