@@ -20,7 +20,7 @@ let myTriviaQuestions = [{
 },
 {
     question: "6. What is the correct way to write a Javascript array?",
-    answers: ["let colors = 'red', 'green', 'blue'", "let colors = (1:'red', 2:'green', 3:'blue'", "let colors = ['red', 'green', 'blue'", "let colors = red, green, blue"]
+    answers: ["let colors = 'red', 'green', 'blue'", "let colors = (1:'red', 2:'green', 3:'blue'", "let colors = ['red', 'green', 'blue']", "let colors = red, green, blue"]
 },
 {
     question: "7. Which operator is used to assign a value to a variable?",
@@ -64,7 +64,7 @@ function answerClickHandler() {
     alert("right asnwer press OK  to continue")
 }
 index++;
-if(index === questions.length) {
+if(index === myTriviaQuestions.length) {
     endQuiz();
 } else {
     showQuestions();
@@ -81,6 +81,7 @@ function endQuiz() {
     questions.setAttribute("class", "hide")
 }
 function showQuestions() {
+    console.log("index = ", index)
     questions.innerHTML = myTriviaQuestions[index].question;
     choices.innerHTML = "";
     for(let i = 0; i < myTriviaQuestions[index].answers.length; i++) {
@@ -103,6 +104,8 @@ let time = 200
 let interval;
 startButton.addEventListener("click", function () {
     // time = 200;
+    let startDiv = document.getElementById("start-screen");
+    startDiv.setAttribute("class", "hide");
     timer.innerHTML = time;
     
     showQuestions()
