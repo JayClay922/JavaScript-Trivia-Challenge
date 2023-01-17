@@ -112,11 +112,14 @@ function endQuiz() {
     questions.setAttribute("class", "hide")
 }
 
+let score = time
 
 submitBtn.addEventListener("click", function (event) {
     location.href = "trivia-highscores.html"
     userInfo = initialsEl[""]
+    time
     localStorage.setItem("initials", initialsEl.value);
+    localStorage.setItem("score", time)
 
 })
 
