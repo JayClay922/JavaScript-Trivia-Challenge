@@ -118,11 +118,11 @@ let score = time
 
 submitBtn.addEventListener("click", function (event) {
     location.href = "trivia-highscores.html"
-    let userInfo = []
-    time
+    let initialsEl = []
+    let time = []
     console.log(time)
-    localStorage.setItem("initials", initialsEl.value);
-    localStorage.setItem("score", time)
+    localStorage.setItem("initials", JSON.stringify(initialsEl.value));
+    localStorage.setItem("score", JSON.stringify(time))
 
 })
 
