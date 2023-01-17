@@ -50,7 +50,7 @@ let questions = document.getElementById("questions")
 let questionTitle = document.getElementById("question-title")
 let choices = document.getElementById("choices")
 let initialsEl = document.getElementById("initials")
-let submit = document.getElementById("submit")
+let submitBtn = document.getElementById("submit")
 
 
 function showQuestions() {
@@ -65,8 +65,6 @@ function showQuestions() {
 
 }
 
-// let audio = new Audio('path/to/yourfile.wav');
-// audio.play();
 
 function answerClickHandler() {
     if(this.textContent !== correctAnswers[index]) {
@@ -103,6 +101,7 @@ if(index === myTriviaQuestions.length) {
 }
 }
 
+
 function endQuiz() {
     choices.innerHTML = "";
     clearInterval(interval);
@@ -113,8 +112,10 @@ function endQuiz() {
     questions.setAttribute("class", "hide")
 }
 
-initialsEl = []
-submit.addEventListener("click", function (event) {
+
+submitBtn.addEventListener("click", function (event) {
+    location.href = "trivia-highscores.html"
+    userInfo = initialsEl[""]
     localStorage.setItem("initials", initialsEl.value);
 
 })
