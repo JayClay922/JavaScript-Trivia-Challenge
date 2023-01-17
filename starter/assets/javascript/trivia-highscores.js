@@ -1,6 +1,9 @@
 let highscoreInitials = localStorage.getItem("initials");
+let scores = localStorage.getItem("score")
 console.log(highscoreInitials)
-document.getElementById("highscores").innerText = highscoreInitials;
+
+document.getElementById("highscores").innerText = highscoreInitials.concat("  ", scores);
+
 
 let clearButton = document.getElementById("clear");
 

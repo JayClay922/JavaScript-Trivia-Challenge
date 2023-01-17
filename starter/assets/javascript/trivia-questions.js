@@ -43,6 +43,8 @@ let myTriviaQuestions = [{
 correctAnswers = ["<script>", "alert('Hello World');", "if(i == 5)", "for(i = 0; i <= 5; i++)", "//This is a comment", "let colors = ['red', 'green', 'blue']", "=", "True", "onclick", "Math.round(7.25)"]
 
 let index = 0
+let time = 100
+let interval;
 
 let startButton = document.getElementById("start");
 let timer = document.getElementById("time")
@@ -116,16 +118,14 @@ let score = time
 
 submitBtn.addEventListener("click", function (event) {
     location.href = "trivia-highscores.html"
-    userInfo = initialsEl[""]
+    let userInfo = []
     time
+    console.log(time)
     localStorage.setItem("initials", initialsEl.value);
     localStorage.setItem("score", time)
 
 })
 
-
-let time = 100
-let interval;
 
 startButton.addEventListener("click", function () {
     let startDiv = document.getElementById("start-screen");
