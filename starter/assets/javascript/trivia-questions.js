@@ -65,17 +65,35 @@ function showQuestions() {
 
 }
 
+// let audio = new Audio('path/to/yourfile.wav');
+// audio.play();
+
 function answerClickHandler() {
     if(this.textContent !== correctAnswers[index]) {
         time -= 10
+        let message = document.createElement("div");
+        message.classList.add("wrongMessage");
+        message.style.borderTop = "2px solid red";
+        message.innerHTML = "Wrong!!";
+        document.body.appendChild(message);
+        setTimeout(() => {
+            message.remove();
+        }, 400);
     
     if(time < 0) {
         time = 0
     }
     timer.innerHTML = time
-    alert("wrong answer press OK to continue");
 } else {
-    alert("right asnwer press OK  to continue")
+    let message = document.createElement("div");
+    message.classList.add("correctMessage");
+    message.style.borderTop = "2px solid green";
+    message.innerHTML = "Correct!!";
+    document.body.appendChild(message);
+    setTimeout(() => {
+        message.remove();
+    }, 400);
+
 }
 index++;
 if(index === myTriviaQuestions.length) {
@@ -95,11 +113,10 @@ function endQuiz() {
     questions.setAttribute("class", "hide")
 }
 
-let initials = initials.value
-
+initialsEl = []
 submit.addEventListener("click", function (event) {
-    initialsEl = initials
-    localStorage.setItem("initials", initialsEl)
+    localStorage.setItem("initials", initialsEl.value);
+
 })
 
 
