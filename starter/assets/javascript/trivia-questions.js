@@ -116,12 +116,18 @@ function endQuiz() {
 
 let score = time
 
+// var names = [];
+// names[0] = prompt("New member name?");
+// localStorage.setItem("names", JSON.stringify(names));
+
+// //...
+// var storedNames = JSON.parse(localStorage.getItem("names"));
+
 submitBtn.addEventListener("click", function (event) {
     location.href = "trivia-highscores.html"
-    let initialsEl = []
-    let time = []
-    console.log(time)
-    localStorage.setItem("initials", JSON.stringify(initialsEl.value));
+    let initialsEl = [];
+    let time = [];G
+    localStorage.setItem("initialsEl", JSON.stringify(initialsEl));
     localStorage.setItem("score", JSON.stringify(time))
 
 })
