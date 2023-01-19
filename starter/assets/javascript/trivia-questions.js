@@ -126,9 +126,9 @@ let score = time
 submitBtn.addEventListener("click", function (event) {
     location.href = "trivia-highscores.html"
     let initialsEl = [];
-    let time = [];G
-    localStorage.setItem("initialsEl", JSON.stringify(initialsEl));
-    localStorage.setItem("score", JSON.stringify(time))
+    let time = [];
+    localStorage.setItem("initialsEl", JSON.stringify(initialsEl.push())) || [];
+    localStorage.setItem("score", JSON.stringify(time.push())) || [];
 
 })
 

@@ -1,7 +1,11 @@
 let highscoreInitials = JSON.parse(localStorage.getItem("initialsEl"));
 let scores = JSON.parse(localStorage.getItem("score"))
+console.log(highscoreInitials)
+console.log(scores)
 
-document.getElementById("highscores").innerText = highscoreInitials.concat(scores)
+document.getElementById("highscores").innerText.push() = highscoreInitials.concat(scores)
+
+
 
 
 let clearButton = document.getElementById("clear");
