@@ -3,8 +3,9 @@ let highscoreInitials = JSON.parse(localStorage.getItem("initialsEl"));
 
 
 for (i = 0; i < highscoreInitials.length; i++) {
-  console.log(highscoreInitials[i])
-  document.getElementById("highscores").innerText += highscoreInitials[i].initialsEl.concat(highscoreInitials[i].score)
+  let showScores = document.createElement("li")
+  showScores.innerText = highscoreInitials[i].initialsEl.concat( "  " + highscoreInitials[i].score)
+  document.getElementById("highscores").append(showScores)
 }
 
 
