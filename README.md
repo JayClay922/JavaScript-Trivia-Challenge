@@ -30,7 +30,7 @@ This project was challenging in the sense that I had never worked with 2 Javascr
 3. When the answer is clicked, the next question appears: whether the answer is wrong or right.
 4. If the answer clicked was incorrect then '10' seconds are subtracted. Additionally whether the answer is correct or incorrect, a corresponding text underneath the quiz appears, saying whether 'Correct!!' or 'Wrong!!'.
 5. The quiz ends when all questions are answered or when the timer reaches 0.
-6. When the game ends, and the user eneters their initials in the input box provided, they are redirected to the 'Highscores' page where they can see their initials and their score. Additionally their information is saved to the local storage, so they can see previous highscores, unless they clock on 'Clear Highscores' which clears the page and clears the local storage as well.
+6. When the game ends, and the user enters their initials in the input box provided, they are redirected to the 'Highscores' page where they can see their initials and their score. Additionally their information is saved to the local storage, so they can see previous highscores, unless they clock on 'Clear Highscores' which clears the page and clears the local storage as well.
 
 ## License
 
