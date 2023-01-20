@@ -1,9 +1,12 @@
 let highscoreInitials = JSON.parse(localStorage.getItem("initialsEl"));
-let scores = JSON.parse(localStorage.getItem("score"))
-console.log(highscoreInitials)
-console.log(scores)
 
-document.getElementById("highscores").innerText.push() = highscoreInitials.concat(scores)
+
+
+for (i = 0; i < highscoreInitials.length; i++) {
+  console.log(highscoreInitials[i])
+  document.getElementById("highscores").innerText += highscoreInitials[i].initialsEl.concat(highscoreInitials[i].score)
+}
+
 
 
 

@@ -124,11 +124,17 @@ let score = time
 // var storedNames = JSON.parse(localStorage.getItem("names"));
 
 submitBtn.addEventListener("click", function (event) {
+    let initialsScores = {
+        initialsEl: initialsEl.value,
+        score: time
+    }
+    console.log(initialsScores)
+    let initialsArray = JSON.parse(localStorage.getItem("initialsEl")) || [];
+    initialsArray.push(initialsScores)
+    localStorage.setItem("initialsEl", JSON.stringify(initialsArray))
+    
+    // localStorage.setItem("score", JSON.stringify(time.push())) || [];
     location.href = "trivia-highscores.html"
-    let initialsEl = [];
-    let time = [];
-    localStorage.setItem("initialsEl", JSON.stringify(initialsEl.push())) || [];
-    localStorage.setItem("score", JSON.stringify(time.push())) || [];
 
 })
 
