@@ -116,12 +116,6 @@ function endQuiz() {
 
 let score = time
 
-// var names = [];
-// names[0] = prompt("New member name?");
-// localStorage.setItem("names", JSON.stringify(names));
-
-// //...
-// var storedNames = JSON.parse(localStorage.getItem("names"));
 
 submitBtn.addEventListener("click", function (event) {
     let initialsScores = {
@@ -132,8 +126,6 @@ submitBtn.addEventListener("click", function (event) {
     let initialsArray = JSON.parse(localStorage.getItem("initialsEl")) || [];
     initialsArray.push(initialsScores)
     localStorage.setItem("initialsEl", JSON.stringify(initialsArray))
-    
-    // localStorage.setItem("score", JSON.stringify(time.push())) || [];
     location.href = "trivia-highscores.html"
 
 })
