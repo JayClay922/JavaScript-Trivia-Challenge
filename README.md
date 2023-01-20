@@ -32,6 +32,49 @@ This project was challenging in the sense that I had never worked with 2 Javascr
 5. The quiz ends when all questions are answered or when the timer reaches 0.
 6. When the game ends, and the user enters their initials in the input box provided, they are redirected to the 'Highscores' page where they can see their initials and their score. Additionally their information is saved to the local storage, so they can see previous highscores, unless they clock on 'Clear Highscores' which clears the page and clears the local storage as well.
 
+## Screenshots
+
+Here are some screesnhots of code involved with the project and it's deployed state on the browser.
+
+1. ![startButton-Timer-code](./starter/assets/screenshots/startButton-timer-function-code.png)
+Code for the how the start button works once it is clicked, and how the timer works with it.
+
+2. ![start-browser](./starter/assets/screenshots/start-browser.png)
+The starting page of the quiz, before the start button is clicked.
+
+3. ![first-question-browser](./starter/assets/screenshots/first-question.png)
+This shows us what the browser shows as soon as the 'Start Quiz' button is clicked.
+
+4. ![questions-answers-arrays](./starter/assets/screenshots/questions-array-answers-array.png)
+An array of the questions and answers.
+
+5. ![showQuestions-function](./starter/assets/screenshots/showQuestions-function-code.png)
+A function which shows how the questions and answer will be displayed on the DOM.
+
+6. ![answerClickHandler-code](./starter/assets/screenshots/answerClickHandler-code.png)
+An event listener and function which shows how the web application behaves if a wrong or right answer is clicked.
+
+7. ![correct-answer-browser](./starter/assets/screenshots/correct-browser.png)
+
+ ![wrong-answer-browser](./starter/assets/screenshots/wrong-browser.png)
+What appears on the browser if a wrong or right answer is clicked.
+
+8. ![endQuiz-code](./starter/assets/screenshots/endQuiz-function-code.png)
+A function that shows us what happens when the quiz ends and when the quiz should end.
+
+9. ![endQuiz-browser](./starter/assets/screenshots/endQuiz-browser.png)
+This should us in the browser what it looks like when we come to the end of the quiz, there's space to input your initials and when you submit it, takes you to the highscores page.
+
+10. ![submit-function](./starter/assets/screenshots/submit-function-code.png)
+The code here shows us what happens when the submit button is clicked for example taking us to a new page and also very importantly saving information onto the local storage to be retrieved on the highscores page.
+
+11. ![highscores-js-code](./starter/assets/screenshots/highscores-js-page-code.png)
+This page shows us how the information is retireved from local storage and then displayed on the highscores page. Addtionally it shows how when the 'Clear Highscores' button is clicked everything from the page is removed and the local storage also cleared.
+
+12. ![highscores-browser](./starter/assets/screenshots/highscores-browser.png)
+This shows us what the highscores page looks like with some information on it.
+
+
 ## License
 
 MIT License
