@@ -47,3 +47,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 ## Deployed Web Application
 
 The URL of the deployed web application is:
+https://jayclay922.github.io/JavaScript-Trivia-Challenge/
